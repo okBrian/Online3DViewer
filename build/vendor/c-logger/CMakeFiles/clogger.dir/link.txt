@@ -1,0 +1,2 @@
+/home/bok/emsdk/upstream/emscripten/emar qc libclogger.a CMakeFiles/clogger.dir/src/logger.c.o CMakeFiles/clogger.dir/src/loggerconf.c.o
+/home/bok/emsdk/upstream/emscripten/emranlib libclogger.a
