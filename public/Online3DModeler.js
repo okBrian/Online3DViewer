@@ -16,7 +16,7 @@ var Module = typeof Module != 'undefined' ? Module : {};
 
 // --pre-jses are emitted after the Module integration code, so that they can
 // refer to Module (if they choose; they can also define Module)
-// include: /tmp/tmp42zr4wrv.js
+// include: /tmp/tmpgl1u21ij.js
 
   if (!Module.expectedDataFileDownloads) {
     Module.expectedDataFileDownloads = 0;
@@ -195,21 +195,21 @@ Module['FS_createPath']("/", "res", true, true);
 
   })();
 
-// end include: /tmp/tmp42zr4wrv.js
-// include: /tmp/tmpiii14nas.js
+// end include: /tmp/tmpgl1u21ij.js
+// include: /tmp/tmpcet2by4h.js
 
     // All the pre-js content up to here must remain later on, we need to run
     // it.
     if (Module['ENVIRONMENT_IS_PTHREAD'] || Module['$ww']) Module['preRun'] = [];
     var necessaryPreJSTasks = Module['preRun'].slice();
-  // end include: /tmp/tmpiii14nas.js
-// include: /tmp/tmp7hptf10h.js
+  // end include: /tmp/tmpcet2by4h.js
+// include: /tmp/tmpof01xanb.js
 
     if (!Module['preRun']) throw 'Module.preRun should exist because file support used it; did a pre-js delete it?';
     necessaryPreJSTasks.forEach(function(task) {
       if (Module['preRun'].indexOf(task) < 0) throw 'All preRun tasks that exist before user pre-js code should remain after; did you replace Module or modify Module.preRun?';
     });
-  // end include: /tmp/tmp7hptf10h.js
+  // end include: /tmp/tmpof01xanb.js
 
 
 // Sometimes an existing Module object exists with properties
@@ -8571,9 +8571,9 @@ function dbg(...args) {
       assert(wasmTable.get(funcPtr) == func, 'JavaScript-side Wasm function table mirror is out of date!');
       return func;
     };
-  var _emscripten_set_main_loop = (func, fps, simulateInfiniteLoop) => {
-      var browserIterationFunc = getWasmTableEntry(func);
-      setMainLoop(browserIterationFunc, fps, simulateInfiniteLoop);
+  var _emscripten_set_main_loop_arg = (func, arg, fps, simulateInfiniteLoop) => {
+      var browserIterationFunc = () => getWasmTableEntry(func)(arg);
+      setMainLoop(browserIterationFunc, fps, simulateInfiniteLoop, arg);
     };
 
   function _fd_close(fd) {
@@ -10775,7 +10775,7 @@ var wasmImports = {
   /** @export */
   emscripten_resize_heap: _emscripten_resize_heap,
   /** @export */
-  emscripten_set_main_loop: _emscripten_set_main_loop,
+  emscripten_set_main_loop_arg: _emscripten_set_main_loop_arg,
   /** @export */
   fd_close: _fd_close,
   /** @export */

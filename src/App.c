@@ -44,7 +44,7 @@ int init(struct App* app) {
 
 void prerun(struct App* app) {
 
-  // shaderInit(app->shaderProgram, "../res/default.vert", "../res/default.frag");
+  shaderInit(app->shaderProgram, "/res/default.vert", "/res/default.frag");
   // Vertices coordinates
 	GLfloat vertices[] =
 	{
@@ -99,6 +99,27 @@ void prerun(struct App* app) {
 //   /* Poll for and process events */
 //   glfwPollEvents();
 // }
+
+void run(void* app) {
+  struct App* a = (struct App*) app;  
+  glClear(GL_COLOR_BUFFER_BIT);
+
+  // Clean the back buffer and assign the new color to it
+  glClear(GL_COLOR_BUFFER_BIT);
+  // Tell OpenGL which Shader Program we want to use
+  glUseProgram(a->shaderProgram->id);
+  // Bind the VAO so OpenGL knows to use it
+  glBindVertexArray(a->VAO);
+  // Draw the triangle using the GL_TRIANGLES primitive
+  glDrawArrays(GL_TRIANGLES, 0, 3);
+  // Swap the back buffer with the fron
+
+  /* Swap front and back buffers */
+  glfwSwapBuffers(a->window);
+
+  /* Poll for and process events */
+  glfwPollEvents();
+}
 
 void shutdown(struct App* app) {
   LOG_TRACE("APP SHUTDOWN");

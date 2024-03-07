@@ -34,7 +34,7 @@ struct App {
 
 int init(struct App* app);
 void prerun(struct App* app);
-// void run(void* app);
+void run(void* app);
 void shutdown(struct App* app);
 
 #endif
