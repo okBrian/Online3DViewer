@@ -1,2 +1,0 @@
-/home/bok/emsdk/upstream/emscripten/emar qc libglad.a CMakeFiles/glad.dir/src/glad.c.o
-/home/bok/emsdk/upstream/emscripten/emranlib libglad.a

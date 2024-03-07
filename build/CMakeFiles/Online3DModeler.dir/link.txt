@@ -1,1 +1,0 @@
-/home/bok/emsdk/upstream/emscripten/emcc --preload-file /home/bok/dev/Online3DModeler/res/default.vert@/res/default.vert --preload-file /home/bok/dev/Online3DModeler/res/default.frag@/res/default.frag -s USE_GLFW=3 -s USE_WEBGL2=1  @CMakeFiles/Online3DModeler.dir/objects1.rsp -o ../public/Online3DModeler.html @CMakeFiles/Online3DModeler.dir/linklibs.rsp
